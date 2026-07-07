@@ -59,6 +59,36 @@ sudo apt update -y
 # [...]
 
 sudo apt upgrade - y
+
+# - install python
+sudo apt install python3-pip -y
+# Installing:
+#   python3-pip
+
+# Installing dependencies:
+#   build-essential          libalgorithm-diff-perl     libmpc3
+#   bzip2                    libalgorithm-diff-xs-perl  libpython3-dev
+#   cpp                      libalgorithm-merge-perl    libpython3.14-dev
+#   cpp-15                   libasan8                   libquadmath0
+#   cpp-15-x86-64-linux-gnu  libc-dev-bin               libstdc++-15-dev
+#   cpp-x86-64-linux-gnu     libc6-dev                  libtsan2
+#   dpkg-dev                 libcc1-0                   libubsan1
+#   fakeroot                 libdpkg-perl               linux-libc-dev
+#   g++                      libexpat1-dev              lto-disabled-list
+#   g++-15                   libfakeroot                make
+#   g++-15-x86-64-linux-gnu  libfile-fcntllock-perl     manpages-dev
+#   g++-x86-64-linux-gnu     libgcc-15-dev              python3-dev
+#   gcc                      libgomp1                   python3-wheel
+#   gcc-15                   libhwasan0                 python3.14-dev
+#   gcc-15-base              libisl23                   rpcsvc-proto
+#   gcc-15-x86-64-linux-gnu  libitm1                    zlib1g-dev
+#   gcc-x86-64-linux-gnu     liblsan0
+# [...]
+# Summary:
+#   Upgrading: 0, Installing: 51, Removing: 0, Not Upgrading: 29
+#   Download size: 87.7 MB
+#   Space needed: 315 MB / 1024 GB available
+
   
 ##########################################################
 # install password generator and ssh
@@ -264,7 +294,8 @@ cat .ssh/alici.pub
 "alici" 
 
 # Key type
-"[ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC2P0PD/3zmnj0tMaWtVo9uand8NwXmFqDUzhTrEWYLr7yoKO5DXpTxzCNSV1jffXYFHHh89w1OsPFKHuOalR2XorH0dBy4f6Gc9DeT38UlaRGe0yCOdV8fpSDJJiawymZbqJ59E1bm0EKMJT9rsa0Po3wTgrFNywf5UdiyPVJM65szcCDBPD38roTC+he1jq21qFClYAs8eVbkEwp5Oh7TXDGVthKQKi/hhsgatuDg/JGKMUCSim6IFPExdssgB/EpYxGuFTosrSIEwTBMBg2kfB1FH89R7aIGZB6S5zKqtGDWZcNX/tMTDcJgP5TS71Ok8g7zIyRHH4VpptOW9gEGODIoqaB8qQFnc2NL9HiRwvRSdNOa1yOkal+42sNmZV6qH9AjyP5qKjeGU/AbNuKX5GIUmAHSK2TSOMoHDz4/8biVJUUrkgrMdBxxklvlWXAZNfmNBkJwhU0aGn72HB/VNbJmSp9yQURWvo9piOHzK03acd5U7JC5G9XqJm49B1bkGt6NpzLzF+oXtQhRH+++w7cyAWUNJBcjWMbtvROb+IJqQ6IVNJKkQ996S+nmAEksSA7f0PRaxeD4aNnV0/Jj1j7VW8gXbm+ufJTg0a+OezcYc/7TGL4ugRY9gaNYxgWB0vsO6AFDyp4T0r/Fk/fjw1HcTWIXHEmluUrZzLGgww== alici@AliciaTechDiva"
+"[]"
+
 
 # Key
 "****************"
@@ -284,7 +315,7 @@ cat ~/.ssh/config
 # Host github.com
 # HostName github.com
 # User git
-# IdentityFile ~/.ssh/sadpiglet
+# IdentityFile ~/.ssh/alici
 
 # - Create source directory
 cd
@@ -308,7 +339,64 @@ Enter passphrase for key '/home/alici/.ssh/alici': "bohc3Naeghie)baen7zeiPaipei8
 ##########################################################
 
 # - clone repo
-git clone git@github.com:SadPiglet/linux-school.git
+git clone git@github.com:alici/linux-school.git
 
 # - push and commit files to github
 cd linux-school
+nano ~/src/linux-school/getting-started-with-github.2026.06.02.sh
+
+ls
+# LICENSE    getting-started-with-github.2026.06.02.sh
+# README.md
+git status
+# On branch main
+# Your branch is up to date with 'origin/main'.
+
+# Changes to be committed:
+#   (use "git restore --staged <file>..." to unstage)
+#         deleted:    getting-started-with-github.2026.06.02.sh
+#         new file:   getting-started-with-github.2026.06.04.sh
+
+# nothing added to commit but untracked files present (use "git add" to track)
+git add .
+git status
+# On branch main
+# Your branch is up to date with 'origin/main'.
+
+# Changes to be committed:
+#   (use "git restore --staged <file>..." to unstage)
+#         deleted:    getting-started-with-github.2026.06.02.sh
+#         new file:   getting-started-with-github.2026.06.04.sh
+
+git commit -am "how to get startetd with github and git on wsl"
+# Author identity unknown
+
+# *** Please tell me who you are.
+
+# Run
+
+#   git config --global user.email "you@example.com"
+#   git config --global user.name "Your Name"
+
+# to set your account's default identity.
+# Omit --global to set the identity only in this repository.
+
+# fatal: empty ident name (for <royak@LAPTOP-2H1UGAB9.localdomain>) not allowed
+git config --global user.email "nomail@nomail.com"
+git config --global user.name "Salici"
+git add .
+git commit -am "how to get startetd with github and git on wsl"
+# [main 8b18818] how to get startetd with github and git on wsl
+#  1 file changed, 267 insertions(+)
+#  create mode 100644 getting-started-with-github.2026.06.02.sh
+git push
+Enter passphrase for key '/home/alici/.ssh/alici': "*********"
+# Enumerating objects: 4, done.
+# Counting objects: 100% (4/4), done.
+# Delta compression using up to 32 threads
+# Compressing objects: 100% (3/3), done.
+# Writing objects: 100% (3/3), 4.21 KiB | 4.21 MiB/s, done.
+# Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+# To github.com:SadPiglet/linux-school.git
+#    998a37c..8b18818  main -> main
+
